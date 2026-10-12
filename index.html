@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8dce8">
+<title>برای زندگیم ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap');
+:root{--pink:#f4b8d0;--rose:#c84f82;--cream:#fff8fb;--ink:#74304e}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Vazirmatn",Tahoma,sans-serif;background:linear-gradient(135deg,#fff9fc,#fbe3ed,#f6c9dc);color:var(--ink);overflow-x:hidden}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative}
+.card{width:min(100%,620px);text-align:center;padding:34px 24px;border:1px solid #fff;background:rgba(255,255,255,.72);border-radius:30px;box-shadow:0 18px 55px #b64b7625;backdrop-filter:blur(8px)}
+h1{font-size:clamp(2rem,8vw,3.3rem);margin:0 0 14px;color:#a83265}
+p{line-height:2;font-size:1.1rem}
+.heart-button{border:0;background:transparent;cursor:pointer;display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:#a83265;font:inherit;font-weight:700}
+.heart{font-size:clamp(6rem,25vw,10rem);line-height:1;display:block;filter:drop-shadow(0 8px 14px #d85b8a50);animation:pulse 1.35s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+.hint{font-size:.95rem;color:#98506e}
+#second{display:none}
+.photo{width:min(100%,430px);height:auto;border-radius:20px;border:5px solid #fff;box-shadow:0 10px 35px #a8326525}
+.song{width:min(100%,420px);margin-top:20px;accent-color:#c84f82}
+.note{margin:22px auto 0;max-width:560px;line-height:2.1}
+.float{position:fixed;bottom:-40px;pointer-events:none;animation:rise 7s linear forwards;z-index:5;opacity:.7}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.small{font-size:.85rem;color:#a56b83}
+@media(max-width:480px){.card{padding:28px 17px}.page{padding:14px}}
+</style>
+</head>
+<body>
+<section class="page" id="first">
+  <main class="card">
+    <h1>برای زندگیم ❤️</h1>
+    <p>یه سورپرایز کوچولو فقط برای تو دارم…</p>
+    <button class="heart-button" id="openLove" aria-label="باز کردن سورپرایز عاشقانه">
+      <span class="heart">❤️</span>
+      <span>روی قلب بزن تا سورپرایزت رو ببینی</span>
+    </button>
+    <p class="hint">با تمام عشق، برای تو 💗</p>
+  </main>
+</section>
+<section class="page" id="second">
+  <main class="card">
+    <h1>تولدت مبارک، عشق من! ❤️</h1>
+    <p>قشنگ‌ترین اتفاق زندگی منی 🎀👑</p>
+    <img class="photo" src="assets/love-letter.png" alt="کارت تبریک عاشقانه">
+    <div class="note">
+      <p>این آهنگ و این نوشته، یه یادگاری کوچیک از عشق بزرگ من به توئه. امیدوارم همیشه بخندی و دلت پر از آرامش باشه. دوستت دارم، تا بی‌نهایت. 🌸💗</p>
+      <p class="small">برای شنیدن آهنگ، دکمه پخش رو بزن 🎵</p>
+      <audio class="song" controls preload="metadata">
+        <source src="assets/love-song.mp3" type="audio/mpeg">
+        مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+      </audio>
+    </div>
+    <p class="small">با عشق، همیشه کنار تو ❤️</p>
+  </main>
+</section>
+<script>
+const first=document.getElementById('first'), second=document.getElementById('second');
+document.getElementById('openLove').addEventListener('click',()=>{
+  first.style.display='none'; second.style.display='flex'; window.scrollTo({top:0,behavior:'smooth'});
+  for(let i=0;i<18;i++) setTimeout(()=>{const el=document.createElement('span');el.className='float';el.textContent=['💗','💕','🌸','❤️'][Math.floor(Math.random()*4)];el.style.left=Math.random()*100+'vw';el.style.fontSize=(18+Math.random()*22)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),7200)},i*120);
+});
+</script>
+</body>
+</html>
