@@ -2,8 +2,8 @@
 
 محتویات:
 - index.html: صفحه اول و دوم
-- assets/love-letter.png: عکس/کارت تبریک ارسالی
-- assets/love-song.mp3: آهنگ ارسالی
+./love-letter.png: عکس/کارت تبریک ارسالی
+./love-song.mp3: آهنگ ارسالی
 
 برای انتشار رایگان:
 1) وارد GitHub شوید و یک repository جدید بسازید (مثلاً love-surprise).
